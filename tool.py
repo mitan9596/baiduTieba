@@ -5,11 +5,11 @@ import re
 
 class tool:
 
-    def change(self, result):
-		# 将换行符或双换行符替换为\n
-        result = re.sub('<br.*?>', '\n', result)
-		# 将img标签替换为\n
-        result = re.sub('<img.*?>', '\n', result)
-		# 将a标签替换为空
-        result = re.sub('<a.*?>.*?</a>', '', result)
-        return result
+    	def change(self, result):
+		# 灏嗘崲琛岀鎴栧弻鎹㈣绗︽浛鎹负\n
+        	result = re.sub('<br.*?>', '\n', result)
+		# 灏唅mg鏍囩鏇挎崲涓篭n
+        	result = re.sub('<img.*?>', '\n', result)
+		# 灏哸鏍囩鏇挎崲涓虹┖
+        	result = re.sub('<a.*?>.*?</a>', '', result)
+		return result
