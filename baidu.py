@@ -20,6 +20,8 @@ class Baidu:
 	        self.seeLZ = '?see_lz='+str(seelz)+'&pn='
 		# 默认爬取页面从第一页开始
 	        self.pageNum = 1
+	        # 全局file变量，文件写入操作对象
+        	self.file = None
 		# 执行main函数
 	        self.main()
     
@@ -49,6 +51,8 @@ class Baidu:
 	        if items:
 			# 输出得到的内容
 	        	print(items.group(1))
+	        	# 创建以贴吧标题为名的文本文件
+            		self.file = open(items.group(1) + '.txt', 'w')
 	        else:
 	        	return None
     
@@ -75,6 +79,8 @@ class Baidu:
         	for item in items:
             		result = tool().change(item)
             		print(result)
+            		# 在文件中写入爬取下的内容
+            		self.file.write(result)
             
 	# 获取帖子总页数
     	def getAllPage(self):
